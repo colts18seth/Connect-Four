@@ -1,4 +1,9 @@
 /* game board table */
+body {
+	display: flex;
+	justify-content: center;
+}
+
 #board td {
 	width: 100px;
 	height: 100px;

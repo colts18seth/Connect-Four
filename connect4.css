@@ -2,12 +2,23 @@
 body {
 	display: flex;
 	justify-content: center;
+<<<<<<< HEAD
+=======
+	flex-direction: column;
+	align-items: center;
+	background-color: #2176ff;
+>>>>>>> parent of 01fffed... added new game button
 }
 
 #board td {
 	width: 100px;
 	height: 100px;
+<<<<<<< HEAD
 	border: solid 1px grey;
+=======
+	border: solid 4px #31393c;
+	background-color: #eff2c0;
+>>>>>>> parent of 01fffed... added new game button
 }
 
 /* pieces are div within game table cells: draw as colored circles */
@@ -29,6 +40,10 @@ body {
 /* column-top is table row of clickable areas for each column */
 #column-top td {
 	border: dashed 1px lightgray;
+<<<<<<< HEAD
+=======
+	background-color: #2176ff;
+>>>>>>> parent of 01fffed... added new game button
 }
 
 #column-top td:hover {

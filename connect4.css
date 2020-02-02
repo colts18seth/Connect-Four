@@ -7,6 +7,24 @@ body {
 	background-color: #2176ff;
 }
 
+#header {
+	text-align: center;
+}
+
+h1 {
+	font-size: 3.5rem;
+	margin: 0;
+	color: #31393c;
+}
+
+a {
+	font-size: 2rem;
+	color: #31393c;
+	text-decoration: none;
+	margin: 1rem;
+	display: block;
+}
+
 #board td {
 	width: 100px;
 	height: 100px;
@@ -23,7 +41,7 @@ body {
 }
 
 .p1 {
-	background-color: blue;
+	background-color: black;
 }
 
 .p2 {
@@ -32,10 +50,10 @@ body {
 
 /* column-top is table row of clickable areas for each column */
 #column-top td {
-	border: dashed 1px lightgray;
+	border: dashed 1px #eff2c0;
 	background-color: #2176ff;
 }
 
 #column-top td:hover {
-	background-color: gold;
+	background-color: #eff2c0;
 }

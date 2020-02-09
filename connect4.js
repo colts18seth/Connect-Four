@@ -98,7 +98,7 @@ function handleClick(evt) {
 		return endGame(`Player ${currPlayer} won!`);
 	}
 
-	// check for tie 
+	// check for tie
 	if (checkForTie()) {
 		return endGame("All spaces are taken.  It's a Tie!");
 	}
@@ -113,9 +113,9 @@ function handleClick(evt) {
 
 // TODO: check if all cells in board are filled; if so call, call endGame
 //--------------------------------------------------------------
-function checkForTie(){
-    if(board.every())
-}
+// function checkForTie(){
+//     if(board.every())
+// }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 function checkForWin() {

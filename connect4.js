@@ -53,7 +53,7 @@ function makeHtmlBoard() {
 
 /** findSpotForCol: given column x, return top empty y (null if filled) */
 function findSpotForCol(x) {
-	for (let i = HEIGHT; i >= 0; i--) {
+	for (let i = HEIGHT - 1; i >= 0; i--) {
 		if (!board[i][x]) {
 			return i;
 		}
@@ -64,10 +64,10 @@ function findSpotForCol(x) {
 /** placeInTable: update DOM to place piece into HTML table of board */
 function placeInTable(y, x) {
 	const newPiece = document.createElement("div");
-	const placeNewPiece = document.getElementById(y + "-" + x);
+	const placeNewPiece = document.getElementById(`${y}-${x}`);
 
-	newPiece.setAttribute("class", "piece");
-	newPiece.setAttribute("class", "p" + currPlayer);
+	newPiece.classList.add("piece");
+	newPiece.classList.add(`p${currPlayer}`);
 
 	placeNewPiece.append(newPiece);
 }
@@ -89,8 +89,7 @@ function handleClick(evt) {
 	}
 
 	// place piece in board and add to HTML table
-	// TODO: add line to update in-memory board
-	//-----------------------------------------------------------
+	board[y][x] = currPlayer;
 	placeInTable(y, x);
 
 	// check for win
@@ -111,11 +110,10 @@ function handleClick(evt) {
 	}
 }
 
-// TODO: check if all cells in board are filled; if so call, call endGame
-//--------------------------------------------------------------
-// function checkForTie(){
-//     if(board.every())
-// }
+function checkForTie() {
+	if (board.every((row) => row.every((cell) => cell))) {
+	}
+}
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
 function checkForWin() {

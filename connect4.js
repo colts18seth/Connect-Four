@@ -88,8 +88,9 @@ function handleClick(evt) {
 		return;
 	}
 
-	// place piece in board and add to HTML table
+	//place piece in board
 	board[y][x] = currPlayer;
+	// add to HTML table
 	placeInTable(y, x);
 
 	// check for win
@@ -98,8 +99,8 @@ function handleClick(evt) {
 	}
 
 	// check for tie
-	if (checkForTie()) {
-		return endGame("All spaces are taken.  It's a Tie!");
+	if (board.every((row) => row.every((cell) => cell))) {
+		return endGame("All spaces are taken, IT'S A Tie!");
 	}
 
 	// switch players
@@ -107,11 +108,6 @@ function handleClick(evt) {
 		currPlayer++;
 	} else {
 		currPlayer--;
-	}
-}
-
-function checkForTie() {
-	if (board.every((row) => row.every((cell) => cell))) {
 	}
 }
 
@@ -131,27 +127,31 @@ function checkForWin() {
 				board[y][x] === currPlayer
 		);
 	}
-
+	// loops through all cells to check for four in a row
 	for (let y = 0; y < HEIGHT; y++) {
 		for (let x = 0; x < WIDTH; x++) {
+			//horizontally
 			const horiz = [
 				[y, x],
 				[y, x + 1],
 				[y, x + 2],
 				[y, x + 3]
 			];
+			//vertically
 			const vert = [
 				[y, x],
 				[y + 1, x],
 				[y + 2, x],
 				[y + 3, x]
 			];
+			// diagonally to the right
 			const diagDR = [
 				[y, x],
 				[y + 1, x + 1],
 				[y + 2, x + 2],
 				[y + 3, x + 3]
 			];
+			// diagonally to the left
 			const diagDL = [
 				[y, x],
 				[y + 1, x - 1],
@@ -159,6 +159,7 @@ function checkForWin() {
 				[y + 3, x - 3]
 			];
 
+			// if any return true, the win condition is met and game is over
 			if (_win(horiz) || _win(vert) || _win(diagDR) || _win(diagDL)) {
 				return true;
 			}
